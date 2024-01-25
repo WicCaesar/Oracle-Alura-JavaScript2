@@ -1,8 +1,10 @@
-/*let titulo = document.querySelector('h1');
+/* Feito por WicCaesar. Divirta-se! :-)
+
+let titulo = document.querySelector('h1');
 titulo.innerHTML = "Número secreto"
 
 let paragrafo = document.querySelector('p');
-paragrafo.innerHTML = "Escolha um número entre 1 e 100."*/
+paragrafo.innerHTML = `Escolha um número entre 1 e ${numeroMaximo}.`*/
 
 let numeroMaximo = 100;
 
@@ -37,7 +39,7 @@ function mensagemInicial() {
 	exibirTextoNaTela("p", `Escolha um número entre 1 e ${numeroMaximo}.`)
 	console.log("Projeto desenvolvido por César Augusto do Nascimento,\n\
 para a formação da Oracle Next Education + Alura.\n\
-JavaScript: César Augusto do Nascimento. HTML e CSS: Mônica Mazzochi Hillman.\n");
+JavaScript: César Augusto do Nascimento. HTML e CSS base: Mônica Mazzochi Hillman.\n");
 }
 mensagemInicial();
 let tentativas = 0;
@@ -86,8 +88,6 @@ function verificarChute() {
 	}
 	limparCampo();
 }
-
-// To comment on a HTML file, use <!-- comment -->.
 
 function limparCampo() {
 	chute = document.querySelector("input");
