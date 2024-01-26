@@ -65,19 +65,27 @@ function novoJogo() {
 	mensagemInicial();
 	numeroSecreto = gerarNumeroAleatorio();
 	tentativas = 0;
+	document.querySelector("input").removeAttribute("disabled");
+	document.getElementById("chutar").removeAttribute("disabled");
 	document.getElementById("reiniciar").setAttribute("disabled", true);
 }
 
+function acertou() {
+	let pluralChute = tentativas > 1 ? "chutes" : "chute";
+	exibirTextoNaTela("h1", `${numeroSecreto}! Você acertou!`);
+	exibirTextoNaTela("p", `Precisou de ${tentativas} ${pluralChute}.`);
+	document.querySelector("input").setAttribute("disabled", true);
+	document.getElementById("chutar").setAttribute("disabled", true);
+	document.getElementById("reiniciar").removeAttribute("disabled");
+}
+
 function verificarChute() {
-	let chute = document.querySelector("input").value;
+	let chute = parseInt(document.querySelector("input").value);
 	++tentativas;
 
-	if (chute == numeroSecreto) {
-		let pluralChute = tentativas > 1 ? "chutes" : "chute";
-		exibirTextoNaTela("h1", `${numeroSecreto}! Você acertou!`);
-		exibirTextoNaTela("p", `Precisou de ${tentativas} ${pluralChute}.`);
-		document.getElementById("reiniciar").removeAttribute("disabled");
-	} else if (!chute || chute < 1 || chute > numeroMaximo) {
+	if (chute == numeroSecreto)
+		acertou();
+	else if (!chute || chute < 1 || chute > numeroMaximo) {
 		exibirTextoNaTela("p", `Escolha um número entre 1 e ${numeroMaximo}.`);
 	} else {
 		if (chute > numeroSecreto) {
