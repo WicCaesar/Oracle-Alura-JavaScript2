@@ -1,6 +1,7 @@
-# Oracle-Alura-JavaScript2
+# Oracle+Alura-JavaScript2
+## vulgo "Número secreto"
 
-![Tela inicial](OracleAluraJavaScript2-WicCaesar.png)
+[<img alt="Clique para jogar" width="400px" src="OracleAluraJavaScript2-WicCaesar.png"/>](https://numerosecreto-five.vercel.app/)
 Projeto da formação da Oracle Next Education + Alura 2024.  
 JavaScript: @WicCaesar  
 HTML e CSS base: @MonicaHillman
